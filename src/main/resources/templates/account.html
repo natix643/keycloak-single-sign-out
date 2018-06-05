@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<div>
+    <a href="/sso/logout">Logout</a>
+</div>
+
+<h3>Username</h3>
+<div th:text="${name}"></div>
+
+<h3>Roles</h3>
+<ul>
+    <li th:each="role : ${roles}" th:text="${role}"></li>
+</ul>
+
+<h3>Token</h3>
+<div th:text="${token}"></div>
+
+</body>
+</html>
