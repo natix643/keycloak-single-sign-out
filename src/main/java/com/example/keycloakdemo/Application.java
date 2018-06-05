@@ -89,9 +89,9 @@ class AppController {
     }
 
     @GetMapping("protected/account/refresh")
-    public String accountRefresh(Model model, Authentication authentication) {
+    public String accountRefresh(Authentication authentication) {
         getKeycloakContext(authentication).refreshExpiredToken(false);
-        return account(model, authentication);
+        return "redirect:/protected/account";
     }
 
     @GetMapping("/protected/account/forceRefresh")
